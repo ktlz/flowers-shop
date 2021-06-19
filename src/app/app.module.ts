@@ -1,9 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireModule } from 'angularfire2';
+
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { StoreComponent } from './components/store/store.component';
+import { StoreComponent } from './components/store/store.component'; 
+import { environment } from '../environments/environment';
+
 
 @NgModule({
   declarations: [
@@ -12,7 +18,9 @@ import { StoreComponent } from './components/store/store.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFirestoreModule,
+    AngularFireModule.initializeApp(environment.firebase),
   ],
   providers: [],
   bootstrap: [AppComponent]

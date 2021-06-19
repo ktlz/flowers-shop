@@ -1,4 +1,8 @@
 import { Component } from "@angular/core";
+import { Observable } from 'rxjs';
+import { AngularFirestore } from 'angularfire2/firestore';
+import { Router } from "@angular/router";
+
 
 @Component({
     selector: "store",
@@ -7,5 +11,16 @@ import { Component } from "@angular/core";
 })
 
 export class StoreComponent {
-    constructor() {}
+    public items: Observable<any[]>;
+    private router: Router;
+
+    constructor(db: AngularFirestore,
+                router: Router) {
+        this.items = db.collection('/items').valueChanges();
+        this.router = router;
+    }
+
+    click() {
+        this.router.navigateByUrl('/home');
+    }
 }
