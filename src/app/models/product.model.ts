@@ -1,6 +1,6 @@
 export class Product {
-    id: string;
-    label: string;
-    price: string;
-    imageName: string;
+    Id: string;
+    Name: string;
+    Price: string;
+    ImageName: string;
 }
