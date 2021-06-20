@@ -16,7 +16,7 @@ export class StoreComponent {
 
     constructor(db: AngularFirestore,
                 router: Router) {
-        this.items = db.collection('/items').valueChanges();
+        this.items = db.collection('/products').valueChanges();
         this.router = router;
     }
 

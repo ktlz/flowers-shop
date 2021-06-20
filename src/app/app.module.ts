@@ -8,13 +8,17 @@ import { AngularFireModule } from 'angularfire2';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StoreComponent } from './components/store/store.component'; 
+import { ProductCardComponent } from './components/product/product-card/product-card.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 import { environment } from '../environments/environment';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    StoreComponent
+    StoreComponent,
+    ProductCardComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

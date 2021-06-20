@@ -1,6 +1,15 @@
-<ul>
-    <li *ngFor="let item of items | async">
-        <pre>{{ item | json }}</pre>
-    </li>
-</ul>
-<button (click)="click()"></button>
+<navbar></navbar>
+
+<div class="cover">
+    <div class="wrapper">
+
+        <h1>Flowers Krop</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar mauris vitae,
+            facilisi est euismod ipsum eu blandit augue.</p>
+        <button class="btn-lg">Смотреть каталог</button>
+    </div>
+</div>
+
+<product-card *ngFor="let item of items | async" [product]="item">
+</product-card>
+
