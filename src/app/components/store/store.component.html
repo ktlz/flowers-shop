@@ -2,14 +2,75 @@
 
 <div class="cover">
     <div class="wrapper">
-
         <h1>Flowers Krop</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar mauris vitae,
             facilisi est euismod ipsum eu blandit augue.</p>
-        <button class="btn-lg">Смотреть каталог</button>
+        <button class="btn btn-lg">Смотреть каталог</button>
     </div>
 </div>
 
-<product-card *ngFor="let item of items | async" [product]="item">
-</product-card>
+<div class="popular-products">
+    <h1 class="popular-products-title">Популярные товары</h1>
+    <div class="popular-products-items">
+        <product-card *ngFor="let item of items | async" [product]="item">
+        </product-card>
+    </div>
+    <a href="#" class="more">Смотреть все букеты</a>
+</div>
+
+<div class="contact-form">
+    <h1>Не нашли что искали?</h1>
+    <div class="wrapper">
+        <div class="contact-form-text">
+            <p>Не нашли букет, который хотели?</p> 
+            <p>Можете задать нам вопрос и мы с радостью ответим на него.</p>
+        </div>
+        <div class="form">
+            
+            <label class="input">
+                <span class="input-label">Введите имя</span>
+                <input class="input-field" type="text" placeholder="Anna" />
+            </label> 
+            <label class="input">
+                <span class="input-label">Введите e-mail</span>
+                <input class="input-field" type="text" placeholder="Anna11@gmail.com" />
+            </label>
+
+            <div class="textarea">
+                <label class="textarea-label" for="comment">Ваш вопрос</label>
+                <textarea id="comment" name="comment" rows="5" cols="33" placeholder="Комментарий"></textarea>
+            </div>
+
+            <label class="checkbox" for="submit">
+                <input type="checkbox" class="check__input" id="submit" name="submit">
+                <div class="check__box"></div>
+                Я согласен на обработку персональных данных
+            </label>
+
+        </div>
+    </div>
+</div>
+
+<div class="about-us">
+    <h1>О нас </h1>
+    <div class="wrapper">
+        <div class="about-us-top">
+            <div class="images-top">
+                <div class="image-back">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar mauris vitae, facilisi est euismod ipsum eu blandit augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </div>
+                <div class="image-front">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar mauris vitae, facilisi est euismod ipsum eu blandit augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </div>
+            </div>
+            <div class="text">
+                
+            </div>
+        </div>
+        <div class="about-us-bottom">
+            <div class="text">
+                <div>Pellentesque iaculis convallis ut risus vestibulum ut scelerisque. Vitae quis consectetur quam nisl. Mauris metus lobortis eget cursus.</div>
+                <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar mauris vitae, facilisi est euismod ipsum eu blandit augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </div>
+                <div>Pellentesque iaculis convallis ut risus vestibulum ut scelerisque. Vitae quis consectetur quam nisl. Mauris metus lobortis eget cursus.</div>
+            </div>
+            <div class="image-bottom"></div>
+        </div>
+    </div>
+</div>
 

@@ -1,2 +1,96 @@
-p
-    font-size 40px
+.product-card
+    display flex
+    flex-direction column
+    align-items center
+    width 270px
+    box-shadow 0px 6px 25px rgba(0, 0, 0, 0.1)
+    margin-right 15px
+    margin-left 15px
+
+    &:hover
+        .product-card-img
+            height 273px
+            background-size cover
+            .img-mask
+                display flex
+                position absolute
+                top 0
+                left 0
+                background-color: rgba(12, 11, 11, 0.3);
+                width 100%
+                height 273px
+            .desc
+                position relative
+                z-index 2
+                display flex
+                flex-direction column
+                padding-left 52px
+                justify-content center
+                height inherit
+                p
+                    color #fff
+                    font-size 15px
+                    line-height 1
+                    letter-spacing 0.2px
+                    margin-bottom 5px
+                .name
+                    font-weight bold
+
+        .product-card-name,
+        .product-card-art
+            display none
+
+    &:nth-child(1)
+        margin-left 0
+
+    &:last-of-type()
+        margin-right 0
+
+    &-img
+        position relative
+        background-image url('../../../../assets/img/product.png')
+        background-repeat no-repeat
+        background-position center
+        width 100% 
+        height 204px
+        transition all 0.2s ease-in-out
+        .img-mask,
+        .desc
+            display none
+
+
+    &-actions
+        display flex
+        justify-content space-between
+        margin-bottom 23px
+        .btn
+            display flex
+        .cart
+            padding-right 13px
+            padding-left 13px
+            margin-left 10px
+            span
+                background-image url('../../../../assets/img/cart-sm.svg')
+                display flex
+                width 16px
+                height 16px
+                margin-left 3px
+    &-price
+        font-size 18px
+        line-height 18px
+        letter-spacing 0.2px
+        color #A72A5F
+        font-weight bold
+    &-name,
+    &-art
+        font-size 15px
+        line-height 1
+        letter-spacing 0.2px
+        color #81AA94
+        margin 0
+
+    &-name
+        margin-top 21px !important
+
+    &-art
+        margin-bottom 11px !important

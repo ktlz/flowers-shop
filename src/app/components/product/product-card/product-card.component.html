@@ -1,6 +1,16 @@
 <div class="product-card">
-
-    <p>{{ product.Name}}</p>
-    <p>{{ product.Price}}</p>
-
+    <div class="product-card-img">
+        <div class="img-mask"></div>
+        <div class="desc">
+            <p class="name">{{ product.Name}}</p>
+            <p class="art">Артикул: 54589</p>
+        </div>
+    </div>
+    <p class="product-card-name">{{ product.Name}}</p>
+    <p class="product-card-art">Артикул: 54589</p>
+    <p class="product-card-price">{{ product.Price}} грн</p>
+    <div class="product-card-actions">
+        <button class="btn btn-md">Заказать</button>
+        <button class="btn btn-md cart">В корзину <span></span></button>
+    </div>
 </div>
