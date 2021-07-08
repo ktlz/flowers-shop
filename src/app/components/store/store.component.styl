@@ -72,6 +72,9 @@
 
 
         .form
+            display flex
+            flex-direction column
+            align-items center
             .input,
             .textarea
                 position relative
@@ -129,4 +132,101 @@
                     background-position center
                     background-repeat no-repeat
                     
+.about-us
+    position relative
+    
+    &-top
+        display flex
+        flex-direction column
+        margin-top 60px
+        
+        .back,
+        .front
+            display flex
 
+            .text 
+                max-width 470px
+                font-size 18px
+                line-height 32px
+                letter-spacing 0.2px
+                color #1D1C1C
+                margin-left 60px
+
+        .back
+            &-img
+                display flex
+                background-image url('../../../assets/img/shop-top-back.png')
+                background-size cover
+                width 505px
+                min-width 505px
+                height 377px
+            
+        .front
+            &-img
+                display flex
+                margin-top -182px
+                margin-left 332px
+                z-index 2
+                background-image url('../../../assets/img/shop-top-front.png')
+                background-size 273px 291px
+                background-repeat no-repeat
+                min-width 273px
+                height 291px
+            .text 
+                margin-top -182px
+
+        .about-us-bottom
+            display flex
+            justify-content flex-end
+            margin-top 60px 
+
+            .image-bottom
+                display flex
+                background-image url('../../../assets/img/shop-bottom.png')
+                background-size cover
+                width 405px
+                min-width 405px
+                height 347px
+            .text 
+                margin-right 28px
+                max-width 470px
+                font-size 18px
+                line-height 32px
+                letter-spacing 0.2px
+                color #1D1C1C
+
+                > div
+                    margin-bottom 25px
+
+.delivery
+    display flex
+    flex-direction column
+    margin-top 70px
+
+    .cond > p
+        font-size 18px
+        line-height 32px
+        letter-spacing 0.2px
+
+.contacts
+    display flex
+    flex-direction column
+    margin-top 60px
+    .wrapper
+        display flex
+
+        .address,
+        .phone
+            display flex
+            align-items baseline
+            justify-content space-between
+
+            .title,
+            .info
+                font-size 18px
+                line-height 32px
+                letter-spacing 0.2px
+
+            .info
+                color #CA6791
+                margin-left 15px
