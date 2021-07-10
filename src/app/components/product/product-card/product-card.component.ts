@@ -16,6 +16,6 @@ export class ProductCardComponent {
 
 
     constructor() {
-        console.log(this.product);
+        // console.log(this.product);
     }
 }

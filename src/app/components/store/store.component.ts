@@ -12,11 +12,22 @@ import { Router } from "@angular/router";
 
 export class StoreComponent {
     public items: Observable<any[]>;
+    public reviews: Observable<any[]>;
     private router: Router;
+    private slideConfig = 
+    {
+        slidesToShow: 1, 
+        slidesToScroll: 1,
+        arrows: true
+        // infinite: true,
+        // speed: 500,
+    };
+
 
     constructor(db: AngularFirestore,
                 router: Router) {
         this.items = db.collection('/products').valueChanges();
+        this.reviews = db.collection('/reviews').valueChanges();
         this.router = router;
     }
 

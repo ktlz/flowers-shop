@@ -91,7 +91,7 @@
 
 <div class="contacts">
     <h1>Контакты</h1>
-    <div class="wrapper">
+    <div class="wrapper"> 
         <div class="contacts">
             <div class="address">
                 <div class="title">Адресс:</div>
@@ -105,7 +105,19 @@
                 </div>
             </div>
         </div>
-        <div class="map"></div>
+        <map></map>
+    </div>
+</div>
+
+<div class="reviews">
+    <h1>Отзывы наших покупателей</h1>
+    <div class="wrapper"> 
+        <div></div>
+        <ngx-slick-carousel class="carousel" 
+        #slickModal="slick-carousel" 
+        [config]="slideConfig">
+            <review ngxSlickItem *ngFor="let review of reviews | async" [review]="review" class="slide"></review>
+        </ngx-slick-carousel>
     </div>
 </div>
 

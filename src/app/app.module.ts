@@ -4,12 +4,17 @@ import { NgModule } from '@angular/core';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireModule } from 'angularfire2';
 
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StoreComponent } from './components/store/store.component'; 
 import { ProductCardComponent } from './components/product/product-card/product-card.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { MapComponent } from './components/map/map.component';
+import { ReviewComponent  } from './components/review/review.component';
 import { environment } from '../environments/environment';
 
 
@@ -18,13 +23,16 @@ import { environment } from '../environments/environment';
     AppComponent,
     StoreComponent,
     ProductCardComponent,
-    NavbarComponent
+    NavbarComponent,
+    MapComponent,
+    ReviewComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebase),
+    SlickCarouselModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

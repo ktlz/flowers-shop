@@ -21,7 +21,11 @@
     "@angular/router": "~8.2.14",
     "angularfire2": "^5.4.2",
     "firebase": "^7.24.0",
+    "jquery": "^3.6.0",
+    "leaflet": "^1.7.1",
+    "ngx-slick-carousel": "^0.5.1",
     "rxjs": "~6.4.0",
+    "slick-carousel": "^1.8.1",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },
