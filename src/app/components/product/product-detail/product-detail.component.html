@@ -1,0 +1,43 @@
+<!-- {{ product?.Id }}
+{{ product?.Name }} -->
+<navbar></navbar>
+<div class="product-details">
+    <div class="wrapper">
+        <h1>{{ product?.Name }}</h1>
+
+        <div class="details">
+            <div class="product-img">
+                <div class="left">
+                    <div class="top"></div>
+                    <div class="bottom"></div>
+                </div>
+                <div class="big"></div>
+            </div>
+    
+            <div class="product-info">
+                <div class="description">{{ product?.Description }}</div>
+                <div class="price">{{ product?.Price }} грн</div>
+                <div class="ammount">
+                    <div class="minus"></div>
+                    <div class="num">1</div>
+                    <div class="plus"></div>
+                </div>
+                <div class="actions">
+                    <button class="btn btn-md">Заказать</button>
+                    <button class="btn btn-md cart">В корзину <span></span></button>
+                </div>
+            </div>
+            <div class="border"></div>
+            <div class="product-size">
+                <div class="height">
+                    <span>Высота:</span>        
+                    <span>{{ product?.Height }}</span>        
+                </div>
+                <div class="width">
+                    <span>Ширина:</span>        
+                    <span>{{ product?.Width }}</span>      
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

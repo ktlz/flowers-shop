@@ -15,7 +15,9 @@ import { ProductCardComponent } from './components/product/product-card/product-
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { MapComponent } from './components/map/map.component';
 import { ReviewComponent  } from './components/review/review.component';
+import { ProductDetailComponent } from './components/product/product-detail/product-detail.component'
 import { environment } from '../environments/environment';
+
 
 
 @NgModule({
@@ -25,7 +27,8 @@ import { environment } from '../environments/environment';
     ProductCardComponent,
     NavbarComponent,
     MapComponent,
-    ReviewComponent
+    ReviewComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,

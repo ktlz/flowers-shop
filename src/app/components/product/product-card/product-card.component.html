@@ -1,11 +1,11 @@
 <div class="product-card">
-    <div class="product-card-img">
+    <a class="product-card-img" [routerLink]="['/products', product.Id]">
         <div class="img-mask"></div>
         <div class="desc">
             <p class="name">{{ product.Name}}</p>
             <p class="art">Артикул: 54589</p>
         </div>
-    </div>
+    </a>
     <p class="product-card-name">{{ product.Name}}</p>
     <p class="product-card-art">Артикул: 54589</p>
     <p class="product-card-price">{{ product.Price}} грн</p>
