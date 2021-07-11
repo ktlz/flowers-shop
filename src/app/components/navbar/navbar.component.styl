@@ -9,6 +9,15 @@
             padding-top 25px
             padding-bottom 25px
 
+            @media screen and (max-width: 1200px)
+                justify-content start
+
+            @media screen and (max-width: 800px)
+                justify-content end
+
+                .links
+                    display none
+
             .links
                 margin-left 115px
                 a
@@ -22,6 +31,9 @@
             .cart
                 position relative
                 //display flex
+
+                @media screen and (max-width: 800px)
+                    margin-right 40px
 
                 .cart-img
                     display flex

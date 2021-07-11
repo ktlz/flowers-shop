@@ -1,3 +1,87 @@
 .footer
-    // position fixed
-    
+    width 100%
+    padding-top 60px
+    padding-bottom 80px
+    background-color #E5E5E5
+    .wrapper
+        display flex
+        flex-direction column
+        justify-content center
+
+
+    &-top 
+        display flex
+        justify-content space-between
+        align-items center
+
+        @media screen and (max-width: 1200px)
+            justify-content space-around
+
+        @media screen and (max-width: 1050px)
+            align-items start
+            .links
+                flex-direction column
+                align-items center
+
+                a
+                    margin 0
+                    margin-bottom 15px
+        @media screen and (max-width: 600px)
+            flex-direction column
+            justify-content center
+            align-items center
+            
+        
+        .logo
+            display flex
+            width 116px
+            height 56px
+            background-image url('./assets/img/logo.svg')
+
+            @media screen and (max-width: 600px)
+                margin-bottom 20px
+
+        .links
+            display flex
+            justify-content space-between
+
+            @media screen and (max-width: 600px)
+                margin-bottom 20px
+            
+            a 
+                color #1d1c1c
+                text-decoration none
+                margin-right 15px
+                &:hover 
+                    text-decoration underline
+                &:active,
+                &:visited
+                    color #1d1c1c
+
+        .rights
+            color #A1A1A1
+
+    .social-links
+        display flex
+        justify-content center
+        margin 0 auto
+        align-items center
+        margin-top 88px
+        a
+            display flex
+        
+        @media screen and (max-width: 600px)
+            margin-top 40px
+
+        .instagram
+            background-image url('assets/img/insta.svg')
+            width 26px
+            height 26px
+            background-size 26px
+            
+        .telegram
+            background-image url('assets/img/telegram.svg')
+            width 31px
+            height 31px
+            background-size 31px
+            margin-right 27px

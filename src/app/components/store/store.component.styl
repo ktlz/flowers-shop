@@ -4,8 +4,12 @@
     height 777px
     background-repeat no-repeat
     width 100%
+
+    @media screen and (max-width: 675px)
+        height 500px
     .wrapper
         padding-top 106px
+
         h1
             margin 0
             color #CA6791
@@ -21,6 +25,23 @@
             max-width 366px
             margin-top 64px
 
+        @media screen and (max-width: 1200px)
+            p,
+            button
+                margin-left 30px
+        @media screen and (max-width: 675px)
+            display flex
+            flex-direction column
+            align-items center
+            p
+                text-align center
+                max-width unset
+                margin 30px
+            button
+                margin 0 auto
+        @media screen and (max-width: 375px)
+            padding-top 70px
+
 .popular-products
     display flex
     flex-direction column
@@ -28,6 +49,10 @@
     justify-content center
     margin-top 140px
     margin-bottom 140px
+
+    @media screen and (max-width: 1200px)
+        margin-top 60px 
+        margin-bottom 60px
     &-title
         font-size 36px
         line-height 32px
@@ -37,7 +62,8 @@
         
     &-items
         display flex
-        justify-content space-between
+        justify-content center
+        flex-wrap wrap
 
     .more
         color #81AA94
@@ -53,6 +79,9 @@
 .contact-form
     margin-bottom 140px
 
+    @media screen and (max-width: 1200px)
+        margin-bottom 60px
+
     h1
         text-align center
         color #CA6791
@@ -61,8 +90,21 @@
     .wrapper
         display flex
         justify-content center
+
+        @media screen and (max-width: 1050px)
+            flex-direction column
+            align-items center
+
         .contact-form-text
             margin-right 131px
+
+            @media screen and (max-width: 1050px)
+                margin-right 0
+                margin-bottom 30px
+
+                p
+                    text-align center
+                    margin 20px
 
             p
                 font-size 18px
@@ -133,75 +175,104 @@
                     background-repeat no-repeat
                     
 .about-us
-    position relative
-    
-    &-top
+    .wrapper
         display flex
         flex-direction column
+
+    &-top
+        display flex
         margin-top 60px
-        
-        .back,
-        .front
+
+        @media screen and (max-width: 900px)
+            flex-direction column-reverse
+            align-items center
+            margin-top 30px
+        .back-img
             display flex
+            background-image url('../../../assets/img/shop-top-back.png')
+            background-size cover
+            width 505px
+            min-width 505px
+            height 377px
 
-            .text 
-                max-width 470px
-                font-size 18px
-                line-height 32px
-                letter-spacing 0.2px
-                color #1D1C1C
-                margin-left 60px
-
-        .back
-            &-img
-                display flex
-                background-image url('../../../assets/img/shop-top-back.png')
-                background-size cover
-                width 505px
-                min-width 505px
-                height 377px
+            @media screen and (max-width: 600px)
+                display none
             
-        .front
-            &-img
-                display flex
-                margin-top -182px
-                margin-left 332px
-                z-index 2
-                background-image url('../../../assets/img/shop-top-front.png')
-                background-size 273px 291px
-                background-repeat no-repeat
-                min-width 273px
-                height 291px
-            .text 
-                margin-top -182px
-
-        .about-us-bottom
+        .front-img
             display flex
-            justify-content flex-end
-            margin-top 60px 
+            margin-top -182px
+            margin-left 332px
+            z-index 2
+            background-image url('../../../assets/img/shop-top-front.png')
+            background-size 273px 291px
+            background-repeat no-repeat
+            min-width 273px
+            height 291px
 
-            .image-bottom
-                display flex
-                background-image url('../../../assets/img/shop-bottom.png')
+            @media screen and (max-width: 600px)
+                margin 0
                 background-size cover
                 width 405px
                 min-width 405px
                 height 347px
-            .text 
-                margin-right 28px
-                max-width 470px
-                font-size 18px
-                line-height 32px
-                letter-spacing 0.2px
-                color #1D1C1C
+        .top-text
+            font-size 18px
+            line-height 32px
+            letter-spacing 0.2px
+            color #1D1C1C
 
-                > div
-                    margin-bottom 25px
+            @media screen and (max-width: 1200px)
+                margin-right 20px
+
+            @media screen and (max-width: 900px)
+                margin 20px
+            
+            > div
+                margin-bottom 25px
+            div:nth-child(2)
+                margin-left 35px
+
+                @media screen and (max-width: 900px)
+                    margin-left 0
+
+    &-bottom
+        display flex
+        justify-content end
+        margin-top 60px
+
+        @media screen and (max-width: 900px)
+            flex-direction column
+            align-items center
+        .image-bottom
+            display flex
+            background-image url('../../../assets/img/shop-bottom.png')
+            background-size cover
+            width 405px
+            min-width 405px
+            height 347px
+        .text 
+            margin-right 28px
+            max-width 470px
+            font-size 18px
+            line-height 32px
+            letter-spacing 0.2px
+            color #1D1C1C
+
+            @media screen and (max-width: 1200px)
+                margin-left 20px
+
+            > div
+                margin-bottom 25px
+
 
 .delivery
     display flex
     flex-direction column
     margin-top 70px
+
+    @media screen and (max-width: 1050px)
+        .cond
+            margin 30px
 
     .cond > p
         font-size 18px
@@ -213,9 +284,19 @@
     flex-direction column
     margin-top 60px
     margin-bottom 140px
+
+    @media screen and (max-width: 1050px)
+        margin-bottom 50px
     .wrapper
         display flex
         justify-content space-around
+
+        @media screen and (max-width: 1050px)
+            flex-direction column
+            align-items center
+
+            .contacts
+                margin-bottom 40px
         .address,
         .phone
             display flex
@@ -229,8 +310,13 @@
                 letter-spacing 0.2px
 
             .info
-                color #CA6791
-                margin-left 15px
+                a
+                    text-decoration none
+                    color #CA6791 
+                    margin-left 15px
 
 .reviews
     margin-bottom 140px
+
+    @media screen and (max-width: 1050px)
+        margin-bottom 50px

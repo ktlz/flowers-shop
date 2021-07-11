@@ -19,8 +19,6 @@ export class StoreComponent {
         slidesToShow: 1, 
         slidesToScroll: 1,
         arrows: true
-        // infinite: true,
-        // speed: 500,
     };
 
 
