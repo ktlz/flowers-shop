@@ -16,8 +16,13 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { MapComponent } from './components/map/map.component';
 import { ReviewComponent  } from './components/review/review.component';
 import { ProductDetailComponent } from './components/product/product-detail/product-detail.component'
+import { CartComponent } from './components/cart/cart.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
+
+
 import { environment } from '../environments/environment';
 
+import { Cart } from './models/cart.model';
 
 
 @NgModule({
@@ -28,7 +33,9 @@ import { environment } from '../environments/environment';
     NavbarComponent,
     MapComponent,
     ReviewComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    CartComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +44,7 @@ import { environment } from '../environments/environment';
     AngularFireModule.initializeApp(environment.firebase),
     SlickCarouselModule,
   ],
-  providers: [],
+  providers: [Cart],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

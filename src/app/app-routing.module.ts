@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { CartComponent } from './components/cart/cart.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 import { ProductDetailComponent } from './components/product/product-detail/product-detail.component';
 import { StoreComponent } from './components/store/store.component';
 
@@ -18,7 +20,13 @@ const routes: Routes = [
                           path: "products/:id",         
                           component: ProductDetailComponent,
                           pathMatch: 'full' 
-                        }];
+                        },
+                        { 
+                          path: "checkout",         
+                          component: CheckoutComponent,
+                          pathMatch: 'full' 
+                        },
+                      ];
 
 
 @NgModule({

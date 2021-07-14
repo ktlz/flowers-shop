@@ -3,7 +3,7 @@
 <navbar></navbar>
 <div class="product-details">
     <div class="wrapper">
-        <h1>{{ product?.Name }}</h1>
+        <h1>{{ product?.name }}</h1>
 
         <div class="details">
             <div class="product-img">
@@ -15,27 +15,27 @@
             </div>
     
             <div class="product-info">
-                <div class="description">{{ product?.Description }}</div>
-                <div class="price">{{ product?.Price }} грн</div>
+                <div class="description">{{ product?.description }}</div>
+                <div class="price">{{ product?.price }} грн</div>
                 <div class="ammount">
-                    <div class="minus"></div>
-                    <div class="num">1</div>
-                    <div class="plus"></div>
+                    <div class="minus" (click)="minusQuantity()" [ngClass]="{'disabled': quantity <= 1 }"></div>
+                    <div class="num"> {{quantity}} </div>
+                    <div class="plus" (click)="plusQuantity()"></div>
                 </div>
                 <div class="actions">
                     <button class="btn btn-md">Заказать</button>
-                    <button class="btn btn-md cart">В корзину <span></span></button>
+                    <button class="btn btn-md cart" (click)="addProductToCart()">В корзину <span></span></button>
                 </div>
             </div>
             <div class="border"></div>
             <div class="product-size">
                 <div class="height">
                     <span>Высота:</span>        
-                    <span>{{ product?.Height }}</span>        
+                    <span>{{ product?.height }}</span>        
                 </div>
                 <div class="width">
                     <span>Ширина:</span>        
-                    <span>{{ product?.Width }}</span>      
+                    <span>{{ product?.width }}</span>      
                 </div>
             </div>
         </div>

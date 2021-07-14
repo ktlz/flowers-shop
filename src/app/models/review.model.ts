@@ -1,5 +1,5 @@
 export class Review {
-    Id: string;
-    ReviewText: string;
-    Author: string;
+    id: string;
+    reviewText: string;
+    author: string;
 }

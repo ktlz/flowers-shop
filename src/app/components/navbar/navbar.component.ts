@@ -1,4 +1,6 @@
 import { Component } from "@angular/core";
+import { Cart } from "../../models/cart.model";
+
 
 @Component({
     selector: "navbar",
@@ -7,6 +9,9 @@ import { Component } from "@angular/core";
 })
 
 export class NavbarComponent {
+    public cart: Cart;
     
-    constructor() {}
+    constructor(cart: Cart) {
+        this.cart = cart;
+    }
 }

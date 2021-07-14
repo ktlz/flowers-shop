@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { Input } from "@angular/core";
 import { Product } from "../../../models/product.model";
-
+import { Cart } from "src/app/models/cart.model";
 
 
 @Component({
@@ -14,8 +14,13 @@ export class ProductCardComponent {
 
     @Input() product: Product;
 
+    
 
-    constructor() {
-        // console.log(this.product);
+    constructor(private cart: Cart) {
+    }
+
+    addProductToCart() 
+    {
+        this.cart.addLine(this.product); 
     }
 }
