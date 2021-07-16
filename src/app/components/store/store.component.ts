@@ -14,7 +14,7 @@ export class StoreComponent {
     public items: Observable<any[]>;
     public reviews: Observable<any[]>;
     private router: Router;
-    private slideConfig = 
+    public slideConfig = 
     {
         slidesToShow: 1, 
         slidesToScroll: 1,

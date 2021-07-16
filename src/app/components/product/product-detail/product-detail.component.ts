@@ -3,7 +3,7 @@ import { Product } from "../../../models/product.model";
 import { ActivatedRoute } from '@angular/router';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { Cart } from "src/app/models/cart.model";
-
+import { BreadcrumbService } from "xng-breadcrumb";
 
 
 
@@ -15,19 +15,22 @@ import { Cart } from "src/app/models/cart.model";
 
 export class ProductDetailComponent implements OnInit {
 
-    private product: Product;
-    private quantity: number = 1;
+    public product: Product;
+    public quantity: number = 1;
 
     constructor(private route: ActivatedRoute, 
                 private cart: Cart,
-                db: AngularFirestore) {
+                db: AngularFirestore,
+                private breadcrumbService: BreadcrumbService) {
         let productId = this.route.snapshot.params['id'];
         db.collection('products').doc(productId).get()
         .subscribe(snapshot => {this.product = snapshot.data() as Product})
+
+        this.breadcrumbService.set('@product', 'asdasd');
     }
 
     ngOnInit(): void {
-        this.breadcrumbService
+        this.breadcrumbService.set('product', 'asdasd');
     }
 
     addProductToCart() 

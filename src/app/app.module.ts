@@ -20,7 +20,7 @@ import { ReviewComponent  } from './components/review/review.component';
 import { ProductDetailComponent } from './components/product/product-detail/product-detail.component'
 import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
-
+import { CartLineComponent } from './components/cart-line/cart-line.component';
 
 import { environment } from '../environments/environment';
 
@@ -37,7 +37,8 @@ import { Cart } from './models/cart.model';
     ReviewComponent,
     ProductDetailComponent,
     CartComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    CartLineComponent
   ],
   imports: [
     BrowserModule,
@@ -54,3 +55,4 @@ import { Cart } from './models/cart.model';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
