@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { ProductDetailComponent } from './components/product/product-detail/product-detail.component';
 import { StoreComponent } from './components/store/store.component';
@@ -8,24 +7,31 @@ import { StoreComponent } from './components/store/store.component';
 
 const routes: Routes = [
                         { 
-                          path: 'home', 
-                          component: StoreComponent 
+                          path: "store", 
+                          data: { breadcrumb: { skip: true, } },
+                          children: [
+                            { 
+                              path: "", 
+                              component: StoreComponent, 
+                            },
+                            { 
+                              path: "products/:id",         
+                              component: ProductDetailComponent,
+                              data: { breadcrumb: {alias: 'Product'} },
+                            },
+                            { 
+                              path: "checkout",         
+                              component: CheckoutComponent,
+                              data: { breadcrumb: { label: 'Корзина' } },
+                            }
+                          ]
                         },
                         { 
-                          path: '', 
-                          redirectTo: '/home', 
+                          path: "", 
+                          redirectTo: "/store", 
+                          data: { breadcrumb: { label: 'Магазин' } },
                           pathMatch: 'full' 
-                        },
-                        { 
-                          path: "products/:id",         
-                          component: ProductDetailComponent,
-                          pathMatch: 'full' 
-                        },
-                        { 
-                          path: "checkout",         
-                          component: CheckoutComponent,
-                          pathMatch: 'full' 
-                        },
+                        }
                       ];
 
 

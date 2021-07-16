@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Product } from "../../../models/product.model";
 import { ActivatedRoute } from '@angular/router';
 import { AngularFirestore } from 'angularfire2/firestore';
@@ -13,7 +13,7 @@ import { Cart } from "src/app/models/cart.model";
     styleUrls: ["product-detail.component.styl"]
 })
 
-export class ProductDetailComponent {
+export class ProductDetailComponent implements OnInit {
 
     private product: Product;
     private quantity: number = 1;
@@ -24,6 +24,10 @@ export class ProductDetailComponent {
         let productId = this.route.snapshot.params['id'];
         db.collection('products').doc(productId).get()
         .subscribe(snapshot => {this.product = snapshot.data() as Product})
+    }
+
+    ngOnInit(): void {
+        this.breadcrumbService
     }
 
     addProductToCart() 

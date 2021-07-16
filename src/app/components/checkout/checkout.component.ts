@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { Cart } from "src/app/models/cart.model";
+import { BreadcrumbService } from "xng-breadcrumb";
 
 
 @Component({
@@ -8,9 +9,12 @@ import { Cart } from "src/app/models/cart.model";
     styleUrls: ["checkout.component.styl"]
 })
 
-export class CheckoutComponent {
+export class CheckoutComponent{
 
-    constructor(private cart: Cart) {
-        debugger
+    constructor(
+                private cart: Cart) {
+        // debugger
+        console.log(cart)
     }
+
 }

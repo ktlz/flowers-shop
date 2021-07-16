@@ -9,7 +9,7 @@
     margin-bottom 20px
     &:hover
         .product-card-img
-            height 273px
+            height 263px
             background-size cover
             text-decoration none
             .img-mask
@@ -19,7 +19,7 @@
                 left 0
                 background-color: rgba(12, 11, 11, 0.3);
                 width 100%
-                height 273px
+                height 263px
             .desc
                 position relative
                 z-index 2
@@ -37,9 +37,15 @@
                 .name
                     font-weight bold
 
+        .product-card-price
+            margin-top 18px
+
+
         .product-card-name,
         .product-card-art
-            display none
+            font-size 0
+            opacity 0
+            margin 0
 
     &:nth-child(1)
         margin-left 0
@@ -89,6 +95,7 @@
         letter-spacing 0.2px
         color #81AA94
         margin 0
+        transition all 0.21s ease-in-out
 
     &-name
         margin-top 21px !important

@@ -8,9 +8,9 @@
         <a href="#">Контакты</a>
         <a href="#">Отзывы</a>
       </div>
-      <div class="cart" [routerLink]="['/checkout']">
+      <div class="cart" routerLink="checkout">
         <span class="cart-img"></span>
-        <span class="items-ammount">{{ cart.itemCount }}</span>
+        <span class="items-ammount">{{ cart.lines?.length || 0 }}</span>
       </div>
     </div>
 </div>

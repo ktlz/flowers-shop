@@ -10,7 +10,10 @@ body
     color #1D1C1C
     // background-color #E5E5E5
     overflow-x hidden
-
+    height 100vh
+    display flex
+    flex-direction column
+    justify-content space-between
 
 h1
     font-family fontTitle
@@ -44,9 +47,15 @@ h1
             background-color #569372
 
 
+
 .slick-slider 
     width 600px
     position relative
+
+    @media screen and (max-width: 800px)
+        width calc(100% - 40px)
+        margin 20px
+
 .slick-slide
     margin 20px
     padding 35px 67px

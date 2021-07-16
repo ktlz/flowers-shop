@@ -1,0 +1,13 @@
+<xng-breadcrumb ></xng-breadcrumb>
+
+<div class="checkout">
+    <div *ngIf="cart.lines.length != 0; else emptyCart">
+        <h1>Ваша корзина не пуста</h1>
+        {{cart.lines}}
+    </div>
+    <ng-template class="empty-cart" #emptyCart>
+        <p class="empty-title">Ваша корзина пуста</p>
+        <div class="cart-image"></div>
+        <a class="catalog" href="#">Перейти к покупкам</a>
+    </ng-template>
+</div>

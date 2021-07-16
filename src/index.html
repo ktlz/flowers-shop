@@ -10,6 +10,26 @@
 </head>
 <body>
   <div class="header">
+    <div class="burger">
+      <input type="checkbox"  class="openSidebarMenu" id="openSidebarMenu">
+      <label for="openSidebarMenu" class="sidebarIconToggle">
+        <div class="spinner diagonal part-1"></div>
+        <div class="spinner horizontal"></div>
+        <div class="spinner diagonal part-2"></div>
+      </label>
+      <div id="sidebarMenu">
+        <div class="main-content-wrapper">
+          <a href="#">О нас</a>
+          <a href="#">Каталог</a>
+          <a href="#">Оплата и доставка</a>
+          <a href="#">Контакты</a>
+          <a href="#">Отзывы</a>
+          <a href="tel:+380502292145" class="phone">+38 (050) 229-21-45</a>
+          <a href="tel:+380993407850" class="phone">+38 (099) 340-78-50</a>
+        </div>
+      </div>
+    </div>
+    
     <div class="header-top">
       <div class="wrapper">
         <a href="/" class="logo"></a>
@@ -27,7 +47,7 @@
 
     </div>
   </div>
-  <app-root></app-root>  
+  <app-root class="main-content"></app-root>  
   <div class="footer">
     <div class="wrapper">
       <div class="footer-top">

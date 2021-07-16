@@ -6,6 +6,8 @@ import { AngularFireModule } from 'angularfire2';
 
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 
+import { BreadcrumbModule } from "xng-breadcrumb";
+import { BreadcrumbService } from 'xng-breadcrumb';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -43,8 +45,12 @@ import { Cart } from './models/cart.model';
     AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebase),
     SlickCarouselModule,
+    BreadcrumbModule,
   ],
-  providers: [Cart],
+  providers: [
+    Cart, 
+    BreadcrumbService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
