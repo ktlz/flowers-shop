@@ -14,7 +14,7 @@ export class CheckoutComponent{
     constructor(
         public cart: Cart
         ) {
-            debugger
+        console.log(cart)
     }
 
 }

@@ -13,6 +13,7 @@ import { BreadcrumbService } from 'xng-breadcrumb';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StoreComponent } from './components/store/store.component'; 
+import { SubmitComponent } from './components/submit/submit.component'; 
 import { ProductCardComponent } from './components/product/product-card/product-card.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { MapComponent } from './components/map/map.component';
@@ -38,7 +39,8 @@ import { Cart } from './models/cart.model';
     ProductDetailComponent,
     CartComponent,
     CheckoutComponent,
-    CartLineComponent
+    CartLineComponent,
+    SubmitComponent
   ],
   imports: [
     BrowserModule,

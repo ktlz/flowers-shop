@@ -14,4 +14,9 @@ export class NavbarComponent {
     constructor(cart: Cart) {
         this.cart = cart;
     }
+
+    scroll(id: string) {
+        let el = document.getElementById(id);
+        el.scrollIntoView();    
+    }
 }

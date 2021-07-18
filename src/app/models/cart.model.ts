@@ -66,9 +66,13 @@ export class Cart {
 
     private getCartFromLocalStorage()
     {
-        let cartLines = localStorage.getItem('cartLines');
+        let localStorageCartLines = localStorage.getItem('cartLines');
 
-        return cartLines ? JSON.parse(cartLines) : [];
+        let parsedCartLines =  localStorageCartLines ? JSON.parse(localStorageCartLines).map(el => new CartLine(el.product, el.quantity)) : [];
+
+        
+
+        return parsedCartLines;
     }
 }
 

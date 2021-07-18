@@ -1,1 +1,20 @@
-{{ line.quantity }}
+<div class="cart-line">
+    <img src={{line.product.imageUrl}} alt="">
+    <div class="line-info">
+        <div class="product-name">{{ line.product.name }}</div>
+        <div class="product-actions">
+            <div class="set-quantity">{{ line.quantity }}</div>
+            <div class="line-total">{{ line.lineTotal }} грн</div>
+            <span class="del"></span>
+        </div>
+    </div>
+    <div class="line-info-mobile">
+        <div class="product-name">{{ line.product.name }}</div>
+        <div class="set-quantity">{{ line.quantity }}</div>
+        <div class="product-actions">
+            <div class="line-total">{{ line.lineTotal }} грн</div>
+            <span class="del"></span>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,72 @@
+<div class="submit">
+    <h1>Оформить заказ</h1>
+
+    <form>
+        <p class="delivery-title">Доставка</p>
+
+        <div class="delivery">
+            <p class="opt">
+                <input type="radio" id="delivery"
+                name="delivery" value="delivery">
+                <label for="delivery">Курьером</label>
+            </p>
+            
+            <p class="opt">
+                <input type="radio" id="takeaway"
+                name="delivery" value="takeaway">
+                <label for="takeaway">Самовывоз</label>
+            </p>
+      
+        </div>
+
+        <p class="delivery-title subtitle">Информация о себе</p>
+
+
+        <label class="input">
+            <input class="input-field" type="text" placeholder="Имя  *" />
+        </label> 
+        <label class="input">
+            <input class="input-field" type="text" placeholder="Телефон *" />
+        </label>
+        <label class="input">
+            <input class="input-field" type="text" placeholder="E-mail" />
+        </label>
+        <label class="input">
+            <input class="input-field" type="text" placeholder="Адрес доставки *" />
+        </label>
+
+        <div class="input">
+            <select class="input" name="select">
+                <option value="" disabled selected>Время доставки *</option>
+                <option value="value1">8:00</option>
+                <option value="value1">9:00</option>
+                <option value="value1">10:00</option>
+                <option value="value1">11:00</option>
+                <option value="value1">12:00</option>
+                <option value="value1">13:00</option>
+                <option value="value1">14:00</option>
+                <option value="value1">15:00</option>
+                <option value="value1">16:00</option>
+                <option value="value1">17:00</option>
+                <option value="value1">18:00</option>
+                <option value="value1">19:00</option>
+              </select>
+        </div>
+        
+
+        <div class="textarea">
+            <textarea id="comment" name="comment" rows="5" cols="33" placeholder="Записка к букету"></textarea>
+        </div>
+
+        <label class="checkbox" for="submit">
+            <input type="checkbox" class="check__input" id="submit" name="submit">
+            <div class="check__box"></div>
+            Я согласен на обработку персональных данных
+        </label>
+
+
+        <div class="button-wrapper">
+          <button class="btn btn-lg" type="submit">Оформить заказ</button>
+        </div>
+    </form>
+</div>

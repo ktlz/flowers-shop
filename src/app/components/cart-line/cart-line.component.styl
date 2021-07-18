@@ -1,0 +1,72 @@
+.cart-line
+    display flex
+    align-items center
+    margin-bottom 30px
+    img
+        width 170px
+        height 125px
+    .line-info-mobile
+        display none
+        
+        .product-name
+            margin-bottom 20px
+            font-size 18px
+            letter-spacing 0.2px
+            color #1D1C1C
+            
+        .product-actions
+            display flex
+            justify-content space-between
+            margin-top 20px
+            .line-total
+                font-size 18px
+                letter-spacing 0.2px
+                color #A72A5F
+
+            .del
+                display flex
+                width 23px
+                height 25px
+                background-size 100%
+                background-image url('../../../assets/img/del.svg')
+                background-repeat no-repeat
+
+         @media screen and (max-width: 675px)
+            display flex
+            flex-direction column
+            width 100%
+            padding-left 32px
+            padding-right 32px
+        
+    .line-info
+        display flex
+        flex-direction column
+        width 100%
+        padding-left 32px
+        padding-right 32px
+
+        @media screen and (max-width: 675px)
+            display none
+
+        .product-name
+            margin-bottom 48px
+            font-size 18px
+            letter-spacing 0.2px
+            color #1D1C1C
+
+        .product-actions
+            display flex
+            justify-content space-between
+
+            .line-total
+                font-size 18px
+                letter-spacing 0.2px
+                color #A72A5F
+
+            .del
+                display flex
+                width 23px
+                height 25px
+                background-size 100%
+                background-image url('../../../assets/img/del.svg')
+                background-repeat no-repeat

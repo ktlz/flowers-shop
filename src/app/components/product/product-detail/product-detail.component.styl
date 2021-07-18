@@ -1,17 +1,28 @@
 .product-details
     .wrapper
+        
         h1
             text-align left
+
+            @media screen and (max-width: 900px)
+                margin-left 20px
+                margin-right 20px
         
         .details
             display flex
             justify-content space-between
             margin-bottom 179px
             margin-top 60px
-
+            @media screen and (max-width: 900px)
+                flex-direction column
+                margin-left 20px
+                margin-right 20px
             .product-img
                 display flex
                 justify-content space-between
+
+                @media screen and (max-width: 900px)
+                    justify-content start
 
                 .left
                     display flex
@@ -106,7 +117,10 @@
                 background-color #81AA94
                 margin-left 19px
 
-            .product-size
+                @media screen and (max-width: 900px)
+                    display none
+
+            .product-category
                 .height,
                 .width
                     display flex
@@ -123,4 +137,27 @@
                     
                     span:nth-child(2)
                         //
+
+                @media screen and (max-width: 900px)
+                    display none
+            
+            .product-category-mobile
+                display none
+                .height
+                    display flex
+
+                    span
+                        margin-bottom 5
+                        font-size 16px
+                        line-height 32px
+                        letter-spacing 0.2px
+                    
+                    span:nth-child(1)
+                        color #CA6791
+                        margin-right 5px
+                    span:nth-child(2)
+                        //
+
+                @media screen and (max-width: 900px)
+                    display flex
 

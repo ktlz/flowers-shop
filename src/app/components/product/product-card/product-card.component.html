@@ -3,11 +3,11 @@
         <div class="img-mask"></div>
         <div class="desc">
             <p class="name">{{ product.name}}</p>
-            <p class="art">Артикул: 54589</p>
+            <p class="art">Описание: {{ product.description}}</p>
         </div>
     </a>
     <p class="product-card-name">{{ product.name}}</p>
-    <p class="product-card-art">Артикул: 54589</p>
+    <p class="product-card-art">Категория: {{ product.category}}</p>
     <p class="product-card-price">{{ product.price}} грн</p>
     <div class="product-card-actions">
         <button class="btn btn-md" (click)="addProductToCart()" [routerLink]="['/checkout']">Заказать</button>

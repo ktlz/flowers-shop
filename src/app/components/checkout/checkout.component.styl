@@ -3,6 +3,45 @@
     flex-direction column
     align-items center
     margin-top 60px
+    .wrapper    
+        h1
+            text-align left
+
+            @media screen and (max-width: 675px)
+                padding-left 20px
+                padding-right 20px
+    
+    .cart-lines
+        display flex
+        flex-direction column
+        border-top 1px solid #81AA94
+        padding-top 40px
+        border-bottom 1px solid #81AA94
+        padding-bottom 10px
+
+        @media screen and (max-width: 675px)
+            padding-left 20px
+            padding-right 20px
+
+    .total
+        padding-top 40px
+        display flex
+        justify-content end
+        padding-bottom 140px
+        border-bottom 1px solid #81AA94
+        margin-bottom 40px
+
+        @media screen and (max-width: 675px)
+            padding-left 20px
+            padding-right 20px
+            
+        .price
+            font-size 18px
+            letter-spacing 0.2px
+            color #A72A5F
+            font-weight bold
+            margin-left 45px
+
     .empty-title
         font-size 24px
         line-height 18px

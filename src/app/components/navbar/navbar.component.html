@@ -2,11 +2,11 @@
     <div class="wrapper">
       <div></div>
       <div class="links">
-        <a href="#">О нас</a>
+        <a (click)="scroll('about')">О нас</a>
         <a href="#">Каталог</a>
-        <a href="#">Оплата и доставка</a>
-        <a href="#">Контакты</a>
-        <a href="#">Отзывы</a>
+        <a (click)="scroll('delivery')">Оплата и доставка</a>
+        <a (click)="scroll('contacts')">Контакты</a>
+        <a (click)="scroll('reviews')">Отзывы</a>
       </div>
       <div class="cart" routerLink="checkout">
         <span class="cart-img"></span>

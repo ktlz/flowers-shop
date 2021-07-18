@@ -1,10 +1,18 @@
 <!-- <xng-breadcrumb ></xng-breadcrumb>
  -->
+ <navbar></navbar>
+
 <div class="checkout">
-    <div *ngIf="cart.lines.length != 0; else emptyCart">
-        <h1>Ваша корзина не пуста</h1>
-        <cart-line *ngFor="let cartLine of cart.lines" [line]="cartLine"></cart-line>
+    <div class="wrapper"  *ngIf="cart.lines.length != 0; else emptyCart">
+        <h1>Корзина товаров</h1>
+        <div class="cart-lines">
+            <cart-line *ngFor="let cartLine of cart.lines" [line]="cartLine"></cart-line>
+        </div>
+        <div class="total">Итого: <div class="price">{{cart.cartPrice}} грн</div></div>
+
+        <submit></submit>
     </div>
+    
     <ng-template class="empty-cart" #emptyCart>
         <p class="empty-title">Ваша корзина пуста</p>
         <div class="cart-image"></div>
