@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { Input } from "@angular/core";
-import { Review } from "../../models/review.model";
+import { Review } from "../../api/models/review.model";
 
 @Component({
     selector: "review",
