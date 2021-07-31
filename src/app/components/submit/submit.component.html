@@ -46,7 +46,7 @@
                 formControlName="name"
                 class="input-field" 
                 type="text" 
-                required
+                [(ngModel)]="order.name"
                 placeholder="Имя  *">
         </label> 
         <label class="input">
@@ -58,6 +58,7 @@
             </div>
             <input 
                 formControlName="phone"
+                [(ngModel)]="order.phone"
                 class="input-field" 
                 type="phone"
                 mask="(000) 000-00-00"
@@ -74,6 +75,7 @@
                 formControlName="address"
                 class="input-field" 
                 type="text" 
+                [(ngModel)]="order.address"
                 placeholder="Адрес доставки *" />
         </label>
         
@@ -84,6 +86,7 @@
                 id="notes" 
                 rows="5" 
                 cols="33" 
+                [(ngModel)]="order.notes"
                 placeholder="Записка к букету">
             </textarea>
         </div>

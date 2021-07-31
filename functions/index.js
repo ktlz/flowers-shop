@@ -6,15 +6,15 @@ admin.initializeApp();
 require('dotenv').config();
 
 const {SENDER_EMAIL, SENDER_PASSWORD} = process.env;
+console.log(SENDER_PASSWORD);
+console.log(SENDER_EMAIL);
 
 exports.sendOrderEmail = functions.firestore.document('orders/{docId}')
 .onCreate((snap, ctx) => {
     const data = snap.data();
 
     let authData = nodemailer.createTransport({
-        host: 'smtp.gmail.com',
-        port: 465,
-        secure: true,
+        service: 'gmail',
         auth: {
             user: SENDER_EMAIL,
             pass: SENDER_PASSWORD
@@ -22,7 +22,7 @@ exports.sendOrderEmail = functions.firestore.document('orders/{docId}')
     });
 
     authData.sendMail({
-        from: "orders@kropflowers.com",
+        from: SENDER_EMAIL,
         to: "kropflowers@gmail.com",
         subject: 'You have new order',
         text: 'Example' 
