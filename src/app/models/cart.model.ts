@@ -14,7 +14,6 @@ export class Cart {
     }
 
     addLine(cartLine: CartLine) {
-        debugger
         let line = this.lines.find(line => line.product.id == cartLine.product.id); 
         if (line != undefined) {
             line.quantity += cartLine.quantity; 

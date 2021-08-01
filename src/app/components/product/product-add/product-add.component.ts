@@ -17,7 +17,15 @@ export class ProductsAddComponent implements OnChanges
     public cartLine: CartLine;
 
     ngOnChanges() {
-        this.cartLine = new CartLine(this.product, 0);
+        if (this.product) {
+            let line = this.cart.lines.find(line => line.product.id == this.product.id); 
+            if (line) {
+                this.cartLine = line;
+            }  
+            else {
+                this.cartLine = new CartLine(this.product, 0);
+            }
+        }
     }
 
     constructor(public cart: Cart) {

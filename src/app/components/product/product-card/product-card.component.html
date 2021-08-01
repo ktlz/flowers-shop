@@ -11,6 +11,6 @@
     <p class="product-card-price">{{ product.price}} грн</p>
     <div class="product-card-actions">
         <button class="btn btn-md" (click)="addProductToCart()" [routerLink]="['/store/checkout']">Заказать</button>
-        <button class="btn btn-md cart" (click)="addProductToCart()">В корзину <span></span></button>
+        <product-add [product]="product"></product-add>
     </div>
 </div>

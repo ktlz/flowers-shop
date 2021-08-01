@@ -2,7 +2,7 @@
     <h1>Оформить заказ</h1>
 
     <form [formGroup]="formGroup" (ngSubmit)="submitOrder()">
-        <p class="delivery-title">Доставка</p>
+        <!-- <p class="delivery-title">Доставка</p>
         <div *ngIf="deliveryType.invalid && (deliveryType.dirty || deliveryType.touched)"
                 class="alert">
             <div *ngIf="deliveryType.errors?.required">
@@ -30,7 +30,7 @@
                 <label for="takeaway">Самовывоз</label>
             </p>
       
-        </div>
+        </div> -->
 
         <p class="delivery-title subtitle">Информация о себе</p>
 
@@ -64,7 +64,7 @@
                 mask="(000) 000-00-00"
                 placeholder="Телефон *" />
         </label>
-        <label class="input" *ngIf="order.deliveryType === DeliveryTypeEnum.delivery">
+        <label class="input">
             <div *ngIf="address.invalid && (address.dirty || address.touched)"
                  class="alert">
                 <div *ngIf="address.errors?.required">

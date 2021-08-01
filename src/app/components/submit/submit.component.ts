@@ -25,21 +25,21 @@ export class SubmitComponent implements OnInit{
 
     ngOnInit() {
         this.formGroup = new FormGroup({
-            name: new FormControl(this.order.name),
+            name: new FormControl(this.order.name, [Validators.required]),
             phone: new FormControl(this.order.phone, [Validators.required]),
-            address: new FormControl(this.order.address, []),
+            address: new FormControl(this.order.address, [Validators.required]),
             notes: new FormControl(this.order.notes, []),
-            deliveryType: new FormControl('delivery')
+            // deliveryType: new FormControl('delivery')
         })
 
-        this.formGroup.get('deliveryType').valueChanges.subscribe(val => {
-            if (val == this.DeliveryTypeEnum.delivery) {
-              this.formGroup.controls['address'].setValidators([Validators.required]);
-            } else {
-              this.formGroup.controls['address'].clearValidators();
-            }
-            this.formGroup.controls['address'].updateValueAndValidity();
-          });
+        // this.formGroup.get('deliveryType').valueChanges.subscribe(val => {
+        //     if (val == this.DeliveryTypeEnum.delivery) {
+        //       this.formGroup.controls['address'].setValidators([Validators.required]);
+        //     } else {
+        //       this.formGroup.controls['address'].clearValidators();
+        //     }
+        //     this.formGroup.controls['address'].updateValueAndValidity();
+        //   });
     }
 
     get deliveryType() { return this.formGroup.get('deliveryType'); }
