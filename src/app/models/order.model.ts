@@ -25,7 +25,6 @@ export class Order {
         let apiOrder = new ApiOrder();
         apiOrder.name = this.name;
         apiOrder.address = this.address;
-        apiOrder.deliveryType = this.deliveryType;
         apiOrder.notes = this.notes;
         apiOrder.phone = this.phone;
         apiOrder.orderItems = this.cart.lines.map(el => { 

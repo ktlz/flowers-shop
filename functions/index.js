@@ -6,8 +6,6 @@ admin.initializeApp();
 require('dotenv').config();
 
 const {SENDER_EMAIL, SENDER_PASSWORD} = process.env;
-console.log(SENDER_PASSWORD);
-console.log(SENDER_EMAIL);
 
 exports.sendOrderEmail = functions.firestore.document('orders/{docId}')
 .onCreate((snap, ctx) => {
@@ -25,6 +23,25 @@ exports.sendOrderEmail = functions.firestore.document('orders/{docId}')
         from: "orders@kropflowers.com",
         to: "kropflowers@gmail.com",
         subject: 'You have new order',
-        text: 'Example' 
+        text: getOrderEmailText(data)
     });
 })
+
+function getOrderEmailText(data) {
+    var html = [];
+
+    let orderItemsString = data.orderItems.map(
+        oi => `Название ${oi.product.name} \t Цена ${oi.product.price} \t Количество ${oi.quantity} \n`
+    ).join("");
+
+    html.push(
+      `Имя ${data.name} \n`,
+      `Телефон ${data.phone} \n`,
+      `Адрес ${data.address} \n`,
+      `Заметки ${data.notes} \n`,
+      `Заказ \n`,
+      orderItemsString
+    );
+
+    return html.join("");
+}
