@@ -20,7 +20,6 @@ export class SubmitComponent implements OnInit{
 
     public submitOrder() {
         let apiOrder = this.order.apiOrder;
-        debugger
         this.db.collection('orders').add({...apiOrder})
     }
 

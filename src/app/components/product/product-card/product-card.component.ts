@@ -21,6 +21,6 @@ export class ProductCardComponent {
 
     addProductToCart() 
     {
-        this.cart.addLine(this.product); 
+        // this.cart.addLine(this.product); 
     }
 }

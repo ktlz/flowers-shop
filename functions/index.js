@@ -22,7 +22,7 @@ exports.sendOrderEmail = functions.firestore.document('orders/{docId}')
     });
 
     authData.sendMail({
-        from: SENDER_EMAIL,
+        from: "orders@kropflowers.com",
         to: "kropflowers@gmail.com",
         subject: 'You have new order',
         text: 'Example' 

@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { Input } from "@angular/core";
+import { Input, Output, EventEmitter } from "@angular/core";
 import { CartLine } from "src/app/models/cart.model";
 
 
@@ -12,10 +12,16 @@ import { CartLine } from "src/app/models/cart.model";
 export class CartLineComponent {
 
     @Input() line: CartLine;
+    @Input() deleteCartLine: Function;
+
 
     
 
     constructor() {
+    }
+
+    delete(id: string) {
+        this.deleteCartLine(id);
     }
 
 }

@@ -1,0 +1,55 @@
+<navbar></navbar>
+
+<div class="wrapper catalog">
+ 
+    <div class="catalog-content">
+
+        <div class="filters">
+            <h1>Каталог</h1>
+
+            <p class="title">Подобрать букет</p>
+            <!-- <p class="filter-title">Цена</p>
+            <div class="price-slider">
+                <ng5-slider [(value)]="minPriceFilter" [(highValue)]="maxPriceFilter" [options]="priceRangeOptions()">
+                </ng5-slider>
+            </div> -->
+            <p class="filter-title">Категория</p>
+            <div class="categories">
+                <button class="cat"
+                [class.active]="filter.selectedCategory == null" (click)="changeCategory()"> 
+                <span></span>
+                Все
+                </button>
+                <button *ngFor="let cat of categories" class="cat"
+                [class.active]="cat == filter.selectedCategory" (click)="changeCategory(cat)"> 
+                <span></span>
+                {{cat}}
+                </button>
+            </div>
+        </div>
+        
+        <div class="items">
+            <div class="search">
+                <input type="text" name="product" #searchTextInput placeholder="Поиск по каталогу" id="">
+                <button class="btn" (click)="searchProducts()">найти</button>
+            </div>
+            <div class="products">
+                <product-card *ngFor="let item of products" [product]="item">
+                </product-card>
+            </div>
+        </div>
+       
+    </div>
+   
+   
+
+    <div class="pagination">
+        <button *counter="let page of pageCount" 
+        (click)="changePage(page)"
+        class="page" 
+        [class.active]="page == selectedPage"> 
+            {{page}}
+        </button>
+    </div>
+
+</div>

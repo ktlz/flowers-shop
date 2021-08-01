@@ -6,17 +6,17 @@
         <h1>Flowers Krop</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar mauris vitae,
             facilisi est euismod ipsum eu blandit augue.</p>
-        <button class="btn btn-lg">Смотреть каталог</button>
+        <button class="btn btn-lg" routerLink="products">Смотреть каталог</button>
     </div>
 </div>
 
 <div class="popular-products">
     <h1 class="popular-products-title">Популярные товары</h1>
     <div class="popular-products-items">
-        <product-card *ngFor="let item of items | async | slice:0:4" [product]="item">
+        <product-card *ngFor="let item of products | slice:0:4" [product]="item">
         </product-card>
     </div>
-    <a href="#" class="more">Смотреть все букеты</a>
+    <a routerLink="/store/products" class="more">Смотреть все букеты</a>
 </div>
 
 <div class="contact-form">
@@ -121,7 +121,7 @@
         <ngx-slick-carousel class="carousel" 
         #slickModal="slick-carousel" 
         [config]="slideConfig">
-            <review ngxSlickItem *ngFor="let review of reviews | async" [review]="review" class="slide"></review>
+            <review ngxSlickItem *ngFor="let review of reviews" [review]="review" class="slide"></review>
         </ngx-slick-carousel>
     </div>
 </div>

@@ -1,6 +1,5 @@
 import { Component } from "@angular/core";
-import { Cart, CartLine } from "src/app/models/cart.model";
-import { BreadcrumbService } from "xng-breadcrumb";
+import { Cart } from "src/app/models/cart.model";
 
 
 @Component({
@@ -14,6 +13,10 @@ export class CheckoutComponent{
     constructor(
         public cart: Cart
         ) {
+    }
+
+    public deleleCartLine = (id: string) => {
+        this.cart.removeLine(id);
     }
 
 }

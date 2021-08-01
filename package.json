@@ -24,6 +24,7 @@
     "firebase": "^7.24.0",
     "jquery": "^3.6.0",
     "leaflet": "^1.7.1",
+    "ng5-slider": "^1.2.6",
     "ngx-mask": "^12.0.0",
     "ngx-slick-carousel": "^0.5.1",
     "rxjs": "~6.6.7",

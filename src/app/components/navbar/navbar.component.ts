@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { Cart } from "../../models/cart.model";
+import { Router } from "@angular/router";
 
 
 @Component({
@@ -11,12 +12,12 @@ import { Cart } from "../../models/cart.model";
 export class NavbarComponent {
     public cart: Cart;
     
-    constructor(cart: Cart) {
+    constructor(cart: Cart, 
+                private router: Router) {
         this.cart = cart;
     }
 
-    scroll(id: string) {
-        let el = document.getElementById(id);
-        el.scrollIntoView();    
+    navigate(sectionToNavigate: string) {
+        this.router.navigateByUrl('/store#'+sectionToNavigate);
     }
 }

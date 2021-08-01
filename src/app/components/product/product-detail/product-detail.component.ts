@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Product } from "../../../api/models/product.model";
 import { ActivatedRoute } from '@angular/router';
 import { AngularFirestore } from 'angularfire2/firestore';
-import { Cart } from "src/app/models/cart.model";
+import { Cart, CartLine } from "src/app/models/cart.model";
 import { BreadcrumbService } from "xng-breadcrumb";
 
 
@@ -35,7 +35,7 @@ export class ProductDetailComponent implements OnInit {
 
     addProductToCart() 
     {
-        this.cart.addLine(this.product, this.quantity); 
+        this.cart.addLine(new CartLine(this.product, this.quantity)); 
     }
 
     plusQuantity() {

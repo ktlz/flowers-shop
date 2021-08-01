@@ -6,7 +6,7 @@
     <div class="wrapper"  *ngIf="cart.lines.length != 0; else emptyCart">
         <h1>Корзина товаров</h1>
         <div class="cart-lines">
-            <cart-line *ngFor="let cartLine of cart.lines" [line]="cartLine"></cart-line>
+            <cart-line *ngFor="let cartLine of cart.lines" [line]="cartLine" [deleteCartLine]="deleleCartLine"></cart-line>
         </div>
         <div class="total">Итого: <div class="price">{{cart.cartPrice}} грн</div></div>
 

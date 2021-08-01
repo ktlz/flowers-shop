@@ -2,13 +2,13 @@
     <div class="wrapper">
       <div></div>
       <div class="links">
-        <a (click)="scroll('about')">О нас</a>
-        <a href="#">Каталог</a>
-        <a (click)="scroll('delivery')">Оплата и доставка</a>
-        <a (click)="scroll('contacts')">Контакты</a>
-        <a (click)="scroll('reviews')">Отзывы</a>
+        <a (click)="navigate('about')">О нас</a>
+        <a routerLink="/store/products">Каталог</a>
+        <a (click)="navigate('delivery')">Оплата и доставка</a>
+        <!-- <a (click)="scroll('contacts')">Контакты</a> -->
+        <a (click)="navigate('reviews')">Отзывы</a>
       </div>
-      <div class="cart" routerLink="checkout">
+      <div class="cart" routerLink="/store/checkout">
         <span class="cart-img"></span>
         <span class="items-ammount">{{ cart.lines?.length || 0 }}</span>
       </div>

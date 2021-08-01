@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskModule, IConfig } from 'ngx-mask'
+import { Ng5SliderModule } from 'ng5-slider';
+
 
 
 import { AngularFirestoreModule } from 'angularfire2/firestore';
@@ -25,11 +27,17 @@ import { ProductDetailComponent } from './components/product/product-detail/prod
 import { CartComponent } from './components/cart/cart.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { CartLineComponent } from './components/cart-line/cart-line.component';
+import { ProductGridComponent } from './components/product/product-grid/product-grid.component';
+import { ProductsAddComponent } from './components/product/product-add/product-add.component';
 
 import { environment } from '../environments/environment';
 
 import { Cart } from './models/cart.model';
 import { Order } from './models/order.model';
+import { ProductRepository } from './models/product.repository';
+import { ReviewRepository } from './models/review.repository';
+
+import { CounterDirective } from './directives/counter.directive';
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 
@@ -45,7 +53,10 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     CartComponent,
     CheckoutComponent,
     CartLineComponent,
-    SubmitComponent
+    SubmitComponent, 
+    ProductGridComponent,
+    CounterDirective,
+    ProductsAddComponent
   ],
   imports: [
     BrowserModule,
@@ -57,11 +68,14 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     FormsModule,
     ReactiveFormsModule,
     NgxMaskModule.forRoot(),
+    Ng5SliderModule,
   ],
   providers: [
     Cart, 
     Order,
     BreadcrumbService,
+    ProductRepository,
+    ReviewRepository
   ],
   bootstrap: [AppComponent]
 })

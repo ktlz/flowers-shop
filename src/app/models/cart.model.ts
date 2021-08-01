@@ -13,14 +13,15 @@ export class Cart {
         this.recalculate();
     }
 
-    addLine(product: Product, quantity: number = 1) {
-        let line = this.lines.find(line => line.product.id == product.id); 
+    addLine(cartLine: CartLine) {
+        debugger
+        let line = this.lines.find(line => line.product.id == cartLine.product.id); 
         if (line != undefined) {
-            line.quantity += quantity; 
+            line.quantity += cartLine.quantity; 
         } 
         else 
         {
-            this.lines.push(new CartLine(product, quantity)); 
+            this.lines.push(cartLine); 
         }
         this.recalculate(); 
         this.putCartToLocalStorage();
@@ -37,7 +38,7 @@ export class Cart {
 
     removeLine(id: string) {
         let index = this.lines.findIndex(line => line.product.id == id); 
-        this.lines.splice(index);
+        this.lines.splice(index, 1);
         this.recalculate();
         this.putCartToLocalStorage();
     }

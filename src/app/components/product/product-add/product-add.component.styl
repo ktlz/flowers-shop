@@ -1,0 +1,50 @@
+input[type=number]::-webkit-inner-spin-button
+    -webkit-appearance none
+
+input[type="number"]
+  -webkit-appearance textfield
+  -moz-appearance textfield
+  appearance textfield
+
+
+.ammount
+    display flex
+    margin-top 30px
+    .minus
+        background-image url('../../../../assets/img/minus.svg')
+        display flex
+        width 25px
+        height 25px
+        margin-right 10px
+        background-size 100%
+        &.disabled
+            background-image url('../../../../assets/img/minus-disabled.svg')
+
+    .num
+        border-bottom 1px solid #81AA94
+        width 35px
+        text-align center
+    .plus
+        background-image url('../../../../assets/img/plus.svg')
+        display flex
+        width 25px
+        height 25px
+        margin-left 10px
+        background-size 100%
+
+.actions
+    display flex
+    margin-bottom 23px
+    margin-top 30px
+    .btn
+        display flex
+    .cart
+        padding-right 13px
+        padding-left 13px
+        margin-left 10px
+        span
+            background-image url('../../../../assets/img/cart-sm.svg')
+            display flex
+            width 16px
+            height 16px
+            margin-left 3px

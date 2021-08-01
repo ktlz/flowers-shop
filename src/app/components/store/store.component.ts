@@ -1,8 +1,9 @@
 import { Component } from "@angular/core";
-import { Observable } from 'rxjs';
-import { AngularFirestore } from 'angularfire2/firestore';
 import { Router } from "@angular/router";
-
+import { Product } from "src/app/api/models/product.model";
+import { ProductRepository } from "src/app/models/product.repository";
+import { ReviewRepository } from "src/app/models/review.repository";
+import { Review } from "src/app/api/models/review.model";
 
 @Component({
     selector: "store",
@@ -11,8 +12,6 @@ import { Router } from "@angular/router";
 })
 
 export class StoreComponent {
-    public items: Observable<any[]>;
-    public reviews: Observable<any[]>;
     private router: Router;
     public slideConfig = 
     {
@@ -22,11 +21,20 @@ export class StoreComponent {
     };
 
 
-    constructor(db: AngularFirestore,
+    constructor(
+                public reviewRepository: ReviewRepository,
+                public productRepository: ProductRepository,
                 router: Router) {
-        this.items = db.collection('/products').valueChanges();
-        this.reviews = db.collection('/reviews').valueChanges();
         this.router = router;
+    }
+
+
+    get products(): Product[] {
+        return this.productRepository.getProducts();
+    }
+
+    get reviews(): Review[] {
+        return this.reviewRepository.getReviews();
     }
 
     click() {

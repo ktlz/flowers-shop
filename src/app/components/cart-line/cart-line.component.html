@@ -5,7 +5,7 @@
         <div class="product-actions">
             <div class="set-quantity">{{ line.quantity }}</div>
             <div class="line-total">{{ line.lineTotal }} грн</div>
-            <span class="del"></span>
+            <span class="del" (click)="delete(line.product.id)"></span>
         </div>
     </div>
     <div class="line-info-mobile">
@@ -13,7 +13,7 @@
         <div class="set-quantity">{{ line.quantity }}</div>
         <div class="product-actions">
             <div class="line-total">{{ line.lineTotal }} грн</div>
-            <span class="del"></span>
+            <span class="del" (click)="delete(line.product.id)"></span>
         </div>
     </div>
 </div>
