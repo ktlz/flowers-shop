@@ -72,7 +72,7 @@ function getContactRequestEmailText(data) {
     html.push(
       `Имя ${data.name} \n`,
       `Email ${data.email} \n`,
-      `Question ${data.question} \n`
+      `Вопрос ${data.question} \n`
     );
 
     return html.join("");
