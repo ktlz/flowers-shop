@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Order } from "src/app/models/order.model";
 import { DeliveryType } from "src/app/api/models/delivery-type.enum";
 import { AngularFirestore } from "angularfire2/firestore";
+import { Cart } from "src/app/models/cart.model";
 
 @Component({
     selector: "submit",
@@ -15,12 +16,14 @@ export class SubmitComponent implements OnInit{
     public formGroup: FormGroup;
 
     constructor(public order: Order, 
+                public cart: Cart,
                 public db: AngularFirestore) {
     }
 
     public submitOrder() {
         let apiOrder = this.order.apiOrder;
         this.db.collection('orders').add({...apiOrder})
+        this.cart.clear();
     }
 
     ngOnInit() {

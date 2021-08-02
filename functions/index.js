@@ -45,3 +45,35 @@ function getOrderEmailText(data) {
 
     return html.join("");
 }
+
+exports.sendContactRequest = functions.firestore.document('contactRequests/{docId}')
+.onCreate((snap, ctx) => {
+    const data = snap.data();
+
+    let authData = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: SENDER_EMAIL,
+            pass: SENDER_PASSWORD
+        }
+    });
+
+    authData.sendMail({
+        from: "contacts@kropflowers.com",
+        to: "kropflowers@gmail.com",
+        subject: 'You have new contact request',
+        text: getContactRequestEmailText(data)
+    });
+})
+
+function getContactRequestEmailText(data) {
+    var html = [];
+
+    html.push(
+      `Имя ${data.name} \n`,
+      `Email ${data.email} \n`,
+      `Question ${data.question} \n`
+    );
+
+    return html.join("");
+}

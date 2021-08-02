@@ -1,0 +1,68 @@
+<div class="contact-form">
+    <h1>Не нашли что искали?</h1>
+    <div class="wrapper">
+        <div class="contact-form-text">
+            <p>Не нашли букет, который хотели?</p> 
+            <p>Можете задать нам вопрос и мы с радостью ответим на него.</p>
+        </div>
+        <form class="form" [formGroup]="formGroup" (ngSubmit)="sendContactRequest()">            
+            <label class="input">
+                <div *ngIf="name.invalid && (name.dirty || name.touched)"
+                    class="alert">
+                    <div *ngIf="name.errors?.required">
+                        Поле обязательное
+                    </div>
+                </div>
+                <span class="input-label">Введите имя</span>
+                <input 
+                    formControlName="name"
+                    class="input-field" 
+                    type="text" 
+                    [(ngModel)]="contactRequest.name"
+                    placeholder="Anna" />
+            </label> 
+            <label class="input">
+                <div *ngIf="email.invalid && (email.dirty || email.touched)"
+                    class="alert">
+                    <div *ngIf="email.errors?.required">
+                        Поле обязательное
+                    </div>
+                </div>
+                <span class="input-label">Введите e-mail</span>
+                <input 
+                    formControlName="email"
+                    class="input-field" 
+                    type="text" 
+                    [(ngModel)]="contactRequest.email"
+                    placeholder="Anna11@gmail.com" />
+            </label>
+
+            <div class="textarea">
+                <div *ngIf="question.invalid && (question.dirty || question.touched)"
+                    class="alert">
+                    <div *ngIf="question.errors?.required">
+                        Поле обязательное
+                    </div>
+                </div>
+                <label class="textarea-label" for="question">Ваш вопрос</label>
+                <textarea 
+                    formControlName="question"
+                    id="question" 
+                    name="question"
+                    [(ngModel)]="contactRequest.question" 
+                    rows="5" 
+                    cols="33">
+                </textarea>
+            </div>
+
+            <!-- <label class="checkbox" for="submit">
+                <input type="checkbox" class="check__input" id="submit" name="submit">
+                <div class="check__box"></div>
+                Я согласен на обработку персональных данных
+            </label> -->
+
+            <button class="btn btn-lg btn-green" type="submit">Отправить</button>
+
+        </form>
+    </div>
+</div>

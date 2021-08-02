@@ -29,11 +29,13 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { CartLineComponent } from './components/cart-line/cart-line.component';
 import { ProductGridComponent } from './components/product/product-grid/product-grid.component';
 import { ProductsAddComponent } from './components/product/product-add/product-add.component';
+import { ContactRequestComponent } from './components/contact-request/contact-request.component';
 
 import { environment } from '../environments/environment';
 
 import { Cart } from './models/cart.model';
 import { Order } from './models/order.model';
+import { ContactRequest } from './models/contact-request.model';
 import { ProductRepository } from './models/product.repository';
 import { ReviewRepository } from './models/review.repository';
 
@@ -56,7 +58,8 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     SubmitComponent, 
     ProductGridComponent,
     CounterDirective,
-    ProductsAddComponent
+    ProductsAddComponent,
+    ContactRequestComponent
   ],
   imports: [
     BrowserModule,
@@ -73,6 +76,7 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
   providers: [
     Cart, 
     Order,
+    ContactRequest,
     BreadcrumbService,
     ProductRepository,
     ReviewRepository

@@ -1,8 +1,5 @@
-<!-- {{ product?.Id }}
-{{ product?.Name }} -->
 <navbar></navbar>
-<!-- <xng-breadcrumb ></xng-breadcrumb>
- --><div class="product-details">
+    <div class="product-details">
     <div class="wrapper">
         <h1>{{ product?.name }}</h1>
 
@@ -26,16 +23,6 @@
                 <div class="description">{{ product?.description }}</div>
                 <div class="price">{{ product?.price }} грн</div>
                 <product-add [product]="product"></product-add>
-
-                <!-- <div class="ammount">
-                    <div class="minus" (click)="minusQuantity()" [ngClass]="{'disabled': quantity <= 1 }"></div>
-                    <div class="num"> {{quantity}} </div>
-                    <div class="plus" (click)="plusQuantity()"></div>
-                </div>
-                <div class="actions">
-                    <button class="btn btn-md" (click)="addProductToCart()" routerLink="/store/checkout">Заказать</button>
-                    <button class="btn btn-md cart" (click)="addProductToCart()">В корзину <span></span></button>
-                </div> -->
             </div>
             <div class="border"></div>
             <div class="product-category">
