@@ -31,7 +31,7 @@ function getOrderEmailText(data) {
     var html = [];
 
     let orderItemsString = data.orderItems.map(
-        oi => `Название ${oi.product.name} \t Цена ${oi.product.price} \t Количество ${oi.quantity} \n`
+        oi => `Название: ${oi.product.name} \t Цена: ${oi.product.price} \t Количество: ${oi.quantity} \n`
     ).join("");
 
     html.push(
@@ -39,7 +39,7 @@ function getOrderEmailText(data) {
       `Телефон ${data.phone} \n`,
       `Адрес ${data.address} \n`,
       `Заметки ${data.notes} \n`,
-      `Заказ \n`,
+      `Заказ: \n`,
       orderItemsString
     );
 

@@ -1,7 +1,8 @@
 <div class="review">
     <div class="review-author">
-            <div class="avatar"></div>
-           <div class="name">{{ review.author}}</div>
+            <div *ngIf="review.sex == 'M'" class="avatar avatar-male"></div>
+            <div *ngIf="review.sex == 'F'" class="avatar avatar-female"></div>
+            <div class="name">{{ review.author}}</div>
     </div>
     <div class="review-text">{{review.reviewText}}</div>
 </div> 

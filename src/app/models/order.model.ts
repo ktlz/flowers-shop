@@ -25,7 +25,6 @@ export class Order {
         let apiOrder = new ApiOrder();
         apiOrder.name = this.name;
         apiOrder.address = this.address;
-        apiOrder.notes = this.notes;
         apiOrder.phone = this.phone;
         apiOrder.orderItems = this.cart.lines.map(el => { 
             let orderItem = new OrderItem()
@@ -33,6 +32,9 @@ export class Order {
             orderItem.quantity = el.quantity;
             return Object.assign({}, orderItem)
         });
+        if (this.notes) {
+            apiOrder.notes = this.notes;
+        }
         return apiOrder;
     }
 }
