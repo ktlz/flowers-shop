@@ -4,6 +4,7 @@ import { Order } from "src/app/models/order.model";
 import { DeliveryType } from "src/app/api/models/delivery-type.enum";
 import { AngularFirestore } from "angularfire2/firestore";
 import { Cart } from "src/app/models/cart.model";
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
     selector: "submit",
@@ -15,7 +16,9 @@ export class SubmitComponent implements OnInit{
     public DeliveryTypeEnum = DeliveryType;
     public formGroup: FormGroup;
 
-    constructor(public order: Order, 
+    constructor(public route: ActivatedRoute,
+                public router: Router,
+                public order: Order, 
                 public cart: Cart,
                 public db: AngularFirestore) {
     }
@@ -24,6 +27,7 @@ export class SubmitComponent implements OnInit{
         let apiOrder = this.order.apiOrder;
         this.db.collection('orders').add({...apiOrder})
         this.cart.clear();
+        this.router.navigate(['completed'], { relativeTo: this.route });
     }
 
     ngOnInit() {

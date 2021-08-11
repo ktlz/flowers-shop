@@ -30,6 +30,7 @@ import { CartLineComponent } from './components/cart-line/cart-line.component';
 import { ProductGridComponent } from './components/product/product-grid/product-grid.component';
 import { ProductsAddComponent } from './components/product/product-add/product-add.component';
 import { ContactRequestComponent } from './components/contact-request/contact-request.component';
+import { CheckoutCompletedComponent } from './components/checkout-completed/checkout-completed.component';
 
 import { environment } from '../environments/environment';
 
@@ -59,7 +60,8 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     ProductGridComponent,
     CounterDirective,
     ProductsAddComponent,
-    ContactRequestComponent
+    ContactRequestComponent,
+    CheckoutCompletedComponent
   ],
   imports: [
     BrowserModule,

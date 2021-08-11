@@ -61,7 +61,7 @@
                 Я согласен на обработку персональных данных
             </label> -->
 
-            <button class="btn btn-lg btn-green" type="submit">Отправить</button>
+            <button class="btn btn-lg btn-green" type="submit" [disabled]="!formGroup.valid">Отправить</button>
 
         </form>
     </div>

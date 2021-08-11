@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+import { CheckoutCompletedComponent } from './components/checkout-completed/checkout-completed.component';
 import { ProductDetailComponent } from './components/product/product-detail/product-detail.component';
 import { ProductGridComponent } from './components/product/product-grid/product-grid.component';
 import { StoreComponent } from './components/store/store.component';
@@ -9,7 +10,6 @@ import { StoreComponent } from './components/store/store.component';
 const routes: Routes = [
                         { 
                           path: "store", 
-                          data: { breadcrumb: { skip: true, } },
                           children: [
                             { 
                               path: "", 
@@ -30,17 +30,24 @@ const routes: Routes = [
                             { 
                               path: "products",         
                               component: ProductGridComponent,
-                              data: { breadcrumb: { alias: 'products' } },
                             },
                             { 
                               path: "products/:id",         
                               component: ProductDetailComponent,
-                              data: { breadcrumb: { alias: 'product' } },
                             },
                             { 
                               path: "checkout",         
-                              component: CheckoutComponent,
-                              data: { breadcrumb: { label: 'Корзина' } },
+                              children: [
+                                {
+                                  path: "",
+                                  component: CheckoutComponent,
+
+                                },
+                                {
+                                  path: "completed",         
+                                  component: CheckoutCompletedComponent,
+                                }
+                              ]
                             }
                           ]
                         },
