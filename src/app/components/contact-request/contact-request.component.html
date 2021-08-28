@@ -7,12 +7,6 @@
         </div>
         <form class="form" [formGroup]="formGroup" (ngSubmit)="sendContactRequest()">            
             <label class="input">
-                <div *ngIf="name.invalid && (name.dirty || name.touched)"
-                    class="alert">
-                    <div *ngIf="name.errors?.required">
-                        Поле обязательное
-                    </div>
-                </div>
                 <span class="input-label">Введите имя</span>
                 <input 
                     formControlName="name"
@@ -20,14 +14,14 @@
                     type="text" 
                     [(ngModel)]="contactRequest.name"
                     placeholder="Anna" />
-            </label> 
-            <label class="input">
-                <div *ngIf="email.invalid && (email.dirty || email.touched)"
-                    class="alert">
-                    <div *ngIf="email.errors?.required">
+                <div *ngIf="name.invalid && (name.dirty || name.touched)"
+                class="alert">
+                    <div class="warning" *ngIf="name.errors?.required">
                         Поле обязательное
                     </div>
                 </div>
+            </label> 
+            <label class="input">
                 <span class="input-label">Введите e-mail</span>
                 <input 
                     formControlName="email"
@@ -35,15 +29,15 @@
                     type="text" 
                     [(ngModel)]="contactRequest.email"
                     placeholder="Anna11@gmail.com" />
-            </label>
-
-            <div class="textarea">
-                <div *ngIf="question.invalid && (question.dirty || question.touched)"
-                    class="alert">
-                    <div *ngIf="question.errors?.required">
+                <div *ngIf="email.invalid && (email.dirty || email.touched)"
+                class="alert">
+                    <div class="warning" *ngIf="email.errors?.required">
                         Поле обязательное
                     </div>
                 </div>
+            </label>
+
+            <div class="textarea">
                 <label class="textarea-label" for="question">Ваш вопрос</label>
                 <textarea 
                     formControlName="question"
@@ -53,6 +47,12 @@
                     rows="5" 
                     cols="33">
                 </textarea>
+                <div *ngIf="question.invalid && (question.dirty || question.touched)"
+                    class="alert">
+                    <div class="warning" *ngIf="question.errors?.required">
+                        Поле обязательное
+                    </div>
+                </div>
             </div>
 
             <!-- <label class="checkbox" for="submit">

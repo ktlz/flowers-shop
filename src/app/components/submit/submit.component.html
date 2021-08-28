@@ -36,26 +36,22 @@
 
 
         <label class="input">
-            <div *ngIf="name.invalid && (name.dirty || name.touched)"
-                 class="alert">
-                <div *ngIf="name.errors?.required">
-                    Поле обязательное
-                </div>
-            </div>
+            
             <input 
                 formControlName="name"
                 class="input-field" 
                 type="text" 
                 [(ngModel)]="order.name"
                 placeholder="Имя  *">
+            <div *ngIf="name.invalid && (name.dirty || name.touched)"
+                class="alert">
+               <div class="warning" *ngIf="name.errors?.required">
+                   Поле обязательное
+               </div>
+           </div>
         </label> 
         <label class="input">
-            <div *ngIf="phone.invalid && (phone.dirty || phone.touched)"
-                 class="alert">
-                <div *ngIf="phone.errors?.required">
-                    Поле обязательное
-                </div>
-            </div>
+            
             <input 
                 formControlName="phone"
                 [(ngModel)]="order.phone"
@@ -63,20 +59,27 @@
                 type="phone"
                 mask="(000) 000-00-00"
                 placeholder="Телефон *" />
+            <div *ngIf="phone.invalid && (phone.dirty || phone.touched)"
+                class="alert">
+               <div class="warning" *ngIf="phone.errors?.required">
+                   Поле обязательное
+               </div>
+           </div>
         </label>
         <label class="input">
-            <div *ngIf="address.invalid && (address.dirty || address.touched)"
-                 class="alert">
-                <div *ngIf="address.errors?.required">
-                    Поле обязательное
-                </div>
-            </div>
+           
             <input 
                 formControlName="address"
                 class="input-field" 
                 type="text" 
                 [(ngModel)]="order.address"
                 placeholder="Адрес доставки *" />
+            <div *ngIf="address.invalid && (address.dirty || address.touched)"
+                class="alert">
+               <div class="warning" *ngIf="address.errors?.required">
+                   Поле обязательное
+               </div>
+           </div>
         </label>
         
 

@@ -37,6 +37,10 @@ export class StoreComponent {
         return this.reviewRepository.getReviews();
     }
 
+    get popularProducts(): Product[] {
+        return this.productRepository.getProducts().filter(p => p.popular);
+    }
+
     click() {
         this.router.navigateByUrl('/home');
     }

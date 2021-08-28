@@ -12,7 +12,7 @@
 <div class="popular-products">
     <h1 class="popular-products-title">Популярные товары</h1>
     <div class="popular-products-items">
-        <product-card *ngFor="let item of products | slice:0:4" [product]="item">
+        <product-card *ngFor="let item of popularProducts | slice:0:4" [product]="item">
         </product-card>
     </div>
     <a routerLink="/store/products" class="more">Смотреть все букеты</a>

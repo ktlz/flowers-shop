@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { Input } from "@angular/core";
 import { Product } from "../../../api/models/product.model";
-import { Cart } from "src/app/models/cart.model";
+import { Cart, CartLine } from "src/app/models/cart.model";
 
 
 @Component({
@@ -21,6 +21,9 @@ export class ProductCardComponent {
 
     addProductToCart() 
     {
-        // this.cart.addLine(this.product); 
+        if (!this.cart.lines?.find(cl => cl.product.id == this.product.id)) {
+            let cartLine = new CartLine(this.product, 1);
+            this.cart.addLine(cartLine);
+        }
     }
 }

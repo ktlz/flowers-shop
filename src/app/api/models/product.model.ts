@@ -5,4 +5,5 @@ export class Product {
     description: string;
     imageUrl: string;
     category: string;
+    popular: boolean;
 }
